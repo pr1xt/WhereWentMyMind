@@ -14,6 +14,8 @@ public class MapControler : MonoBehaviour
     public GameObject EnemyMapElement;
     public GameObject GunPickUpMapElement;
     public GameObject CoinPickUpMapElement;
+    public GameObject HeartPickUpMapElement;
+    GameObject prefabToSpawn = null;
     public float MapSpawnHeight = 20f;
 
     private List<Vector2Int> GetSurroundingPositions(Vector2Int roomPosition)
@@ -215,8 +217,24 @@ public class MapControler : MonoBehaviour
 
             Quaternion rotation = Quaternion.identity;
 
-            GameObject attached = Instantiate(CoinPickUpMapElement, worldPos, rotation);
-            attached.transform.SetParent(coin.transform, worldPositionStays: true);
+
+            // Check the name of the object
+            if (coin.name.Contains("Coin"))
+            {
+                prefabToSpawn = CoinPickUpMapElement;
+            }
+            else if (coin.name.Contains("Heart"))
+            {
+                prefabToSpawn = HeartPickUpMapElement;
+            }
+            
+            // If we found a matching prefab, instantiate it
+            if (prefabToSpawn != null)
+            {
+                GameObject attached = Instantiate(prefabToSpawn, worldPos, rotation);
+                attached.transform.SetParent(coin.transform, worldPositionStays: true);
+            }
         }
+
     }
 }

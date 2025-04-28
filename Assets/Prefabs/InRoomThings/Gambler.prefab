@@ -157,8 +157,8 @@ Transform:
   m_GameObject: {fileID: 3832602605625331516}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.44, y: 0.479, z: -0.19}
-  m_LocalScale: {x: 0.24290429, y: 0.28003722, z: 0.32747552}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2828218358757730080}
@@ -194,7 +194,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 48770a8fae6b8b340b8785db259b3696, type: 2}
+  - {fileID: 2100000, guid: e20f7356ec6972a419c54cc93c869c3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -289,7 +289,10 @@ MonoBehaviour:
   pickUps:
   - {fileID: 553988104983835085, guid: f4595b3d31574594cbeceef73b7b4ae0, type: 3}
   gamblerAnimator: {fileID: 8838209690293900295}
+  SpawnX: 0
+  SpawnZ: 0
   gamblingSound: {fileID: 7967763811939519573}
+  interactKey: 101
 --- !u!65 &526339650780096046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -408,9 +411,12 @@ PrefabInstance:
     - {fileID: 3627977968196703210, guid: 4266095adb2e75044bd2109426296125, type: 3}
     - {fileID: 7940071281084905203, guid: 4266095adb2e75044bd2109426296125, type: 3}
     - {fileID: 3394118602672790602, guid: 4266095adb2e75044bd2109426296125, type: 3}
+    - {fileID: 6461363934660569793, guid: 4266095adb2e75044bd2109426296125, type: 3}
+    - {fileID: 905176240436895324, guid: 4266095adb2e75044bd2109426296125, type: 3}
+    - {fileID: 7357337371916521581, guid: 4266095adb2e75044bd2109426296125, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1547315394914601444, guid: 4266095adb2e75044bd2109426296125, type: 3}
-      insertIndex: 0
+      insertIndex: -1
       addedObject: {fileID: 6491993587924990652}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4266095adb2e75044bd2109426296125, type: 3}
