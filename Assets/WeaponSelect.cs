@@ -7,45 +7,46 @@ public class WeaponSelect : MonoBehaviour
 
     public void SelectPaintRoller()
     {
-        gameManager.sceneToLoad = "GamePaintRoller"; 
+        gameManager.sceneToLoad = "Game"; 
         gameManager.StartGame();
     }
 
     public void SelectDrill()
     {
-        gameManager.sceneToLoad = "GameDrill"; 
+        gameManager.sceneToLoad = "Game"; 
         gameManager.StartGame();
     }
 
     public void SelectSkull()
     {
-        gameManager.sceneToLoad = "GameSkull"; 
+        gameManager.sceneToLoad = "Game"; 
         gameManager.StartGame();
     }
     public void SelectRecipePrinter()
     {
-        gameManager.sceneToLoad = "GameRecipePrinter"; 
+        gameManager.sceneToLoad = "Game"; 
         gameManager.StartGame();
     }
     public void SelectToster()
     {
-        gameManager.sceneToLoad = "GameToster"; 
+        gameManager.sceneToLoad = "Game"; 
         gameManager.StartGame();
     }
     public void SelectPhone()
     {
-        gameManager.sceneToLoad = "GamePhone"; 
+        gameManager.sceneToLoad = "Game"; 
         gameManager.StartGame();
     }
     public void SelectGamblingGun()
     {
-        gameManager.sceneToLoad = "GameGamblingGun"; 
+        gameManager.sceneToLoad = "Game"; 
         gameManager.StartGame();
     }
     public void SelectRandom()
     {
         int randomIndex = Random.Range(0, screneNames.Length);
-        gameManager.sceneToLoad = screneNames[randomIndex];
+        // gameManager.sceneToLoad = screneNames[randomIndex];
+        gameManager.sceneToLoad = "Game";
         gameManager.StartGame();
     }
 }
