@@ -10,11 +10,13 @@ public class EnemyControler : MonoBehaviour
     private Dictionary<Renderer, Color> originalColors = new Dictionary<Renderer, Color>();
     public GameObject Coin;
     public GameObject HealthUp;
+    public MapControler MapController;
     public AudioSource hitSound;
     public GameObject deathSound;
     public EnemyMovement RudyMovement;
     public BugController NormalMovement;
 
+    [System.Obsolete]
     private void Start()
     {
         // Find all Renderer components in the enemy's hierarchy
@@ -24,6 +26,10 @@ public class EnemyControler : MonoBehaviour
         foreach (var renderer in enemyRenderers)
         {
             originalColors[renderer] = renderer.material.color;
+        }
+        if (MapController == null)
+        {
+            MapController = FindObjectOfType<MapControler>();
         }
     }
 
@@ -75,6 +81,7 @@ public class EnemyControler : MonoBehaviour
         Destroy(gameObject);
         if (Random.Range(0, 100) < 20){
             Instantiate(Random.Range(0, 2) == 0 ? Coin : HealthUp, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation);
+            MapController.UpdateIconsOnMap();
         }
     }
     public void TurnOnEnemy(){
