@@ -144,7 +144,7 @@ public class InventoryControler : MonoBehaviour
         weapons[currentWeaponIndex] = newWeapon;
 
         
-        // mapController.UpdateIconsOnMap();
+        mapController.UpdateIconsOnMap();
         UpdateWeaponUI();
     }
 

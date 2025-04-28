@@ -2178,7 +2178,7 @@ PrefabInstance:
     - target: {fileID: 4573391810870780783, guid: de9c5ec1c25c6b14493cf6564701c42a, type: 3}
       propertyPath: mapController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1678147438}
     - target: {fileID: 4573391810870780783, guid: de9c5ec1c25c6b14493cf6564701c42a, type: 3}
       propertyPath: weaponStartIconPrefab
       value: 
@@ -3738,6 +3738,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1678147438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3800625150806201427, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
+  m_PrefabInstance: {fileID: 438499740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2c9c362f999054597bcb8911b358bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1696021752
 GameObject:
   m_ObjectHideFlags: 0
