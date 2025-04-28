@@ -24,6 +24,26 @@ public class InventoryControler : MonoBehaviour
     public int maxWeapons = 2;
     private List<Weapon> weapons = new();
     public MapControler mapController;
+    public KeyCode weapon1Key = KeyCode.Alpha1;
+    public KeyCode weapon2Key = KeyCode.Alpha2;
+
+    private KeyCode LoadKey(string keyName, string defaultKey) {
+        string keyString = PlayerPrefs.GetString(keyName, defaultKey);
+        KeyCode keyCode;
+        if (System.Enum.TryParse(keyString, out keyCode))
+        {
+            return keyCode;
+        }
+        else
+        {
+            if (System.Enum.TryParse(defaultKey, out keyCode))
+            {
+                return keyCode;
+            }
+        }
+
+        return KeyCode.Alpha1; // There was an error without it, it has to return something in case it can't parse both the saved and default key
+    }
 
     public int GetWeaponsCount()
     {
@@ -158,10 +178,12 @@ public class InventoryControler : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.Alpha1)){
+        weapon1Key = LoadKey("Weapon1Key", "Alpha1");
+        weapon2Key = LoadKey("Weapon2Key", "Alpha2");
+        if(Input.GetKey(weapon1Key)){
             SwitchWeapon(0);
         }
-        if(Input.GetKey(KeyCode.Alpha2)){
+        if(Input.GetKey(weapon2Key)){
             SwitchWeapon(1);
         }
     }
