@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Where-went-my-mind.sln"
+    "dotnet.defaultSolution": "WhereWentMyMind.sln"
 }
