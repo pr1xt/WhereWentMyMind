@@ -5,19 +5,15 @@ using UnityEngine.UI;
 
 class Weapon
 {
-    public GameObject visualPrefab;
-    public GameObject weaponPrefab;
+    public WeaponData weaponData;
     public GameObject weapon;
-    public GameObject iconPrefab;
 }
 
 public class InventoryControler : MonoBehaviour
 {
     private int currentWeaponIndex = 0;
     public TextMeshProUGUI ammoText;
-    [SerializeField] private GameObject weaponStartVisualPrefab;
-    [SerializeField] private GameObject weaponStartPrefab;
-    [SerializeField] private GameObject weaponStartIconPrefab;
+    [SerializeField] private WeaponData weaponStartData;
     [SerializeField] private GameObject weaponPickupPrefab;
     [SerializeField] private RectTransform inventoryUI;
     [SerializeField] private GameObject inventoryUIItemBorderPrefab;
@@ -60,7 +56,7 @@ public class InventoryControler : MonoBehaviour
         for (int i = 0; i < weapons.Count; i++)
         {
             GameObject weaponIcon = Instantiate(inventoryUIItemBorderPrefab, inventoryUI);
-            Instantiate(weapons[i].iconPrefab, weaponIcon.transform);
+            Instantiate(weapons[i].weaponData.iconPrefab, weaponIcon.transform);
             if (i == currentWeaponIndex)
             {
                 weaponIcon.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
@@ -69,7 +65,7 @@ public class InventoryControler : MonoBehaviour
         }
     }
 
-    public void AddWeapon(GameObject visualPrefab, GameObject weaponPrefab, GameObject iconPrefab)
+    public void AddWeapon(WeaponData weaponData)
     {
         if (weapons.Count >= maxWeapons)
         {
@@ -79,10 +75,8 @@ public class InventoryControler : MonoBehaviour
 
         Weapon newWeapon = new()
         {
-            visualPrefab = visualPrefab,
-            weaponPrefab = weaponPrefab,
-            weapon = Instantiate(weaponPrefab, Camera.main.transform),
-            iconPrefab = iconPrefab
+            weaponData = weaponData,
+            weapon = Instantiate(weaponData.weaponPrefab, Camera.main.transform),
         };
 
         IWeaponSystem weaponSystem = newWeapon.weapon.GetComponent<IWeaponSystem>();
@@ -110,21 +104,17 @@ public class InventoryControler : MonoBehaviour
     }
 
 
-    public void ReplaceWeapon(GameObject newVisualPrefab, GameObject newWeaponPrefab, GameObject newIconPrefab, Vector3 oldWeaponPosition)
+    public void ReplaceWeapon(WeaponData weaponData, Vector3 oldWeaponPosition)
     {
         GameObject gunPickUp = Instantiate(weaponPickupPrefab, oldWeaponPosition, Quaternion.identity);
-        gunPickUp.GetComponent<GunPickUp>().gunVisualPrefab = weapons[currentWeaponIndex].visualPrefab;
-        gunPickUp.GetComponent<GunPickUp>().gunPrefab = weapons[currentWeaponIndex].weaponPrefab;
-        gunPickUp.GetComponent<GunPickUp>().iconPrefab = weapons[currentWeaponIndex].iconPrefab;
+        gunPickUp.GetComponent<GunPickUp>().weaponData = weapons[currentWeaponIndex].weaponData;
 
         Destroy(weapons[currentWeaponIndex].weapon);
 
         Weapon newWeapon = new()
         {
-            visualPrefab = newVisualPrefab,
-            weaponPrefab = newWeaponPrefab,
-            weapon = Instantiate(newWeaponPrefab, Camera.main.transform),
-            iconPrefab = newIconPrefab
+            weaponData = weaponData,
+            weapon = Instantiate(weaponData.weaponPrefab, Camera.main.transform),
         };
 
         IWeaponSystem weaponSystem = newWeapon.weapon.GetComponent<IWeaponSystem>();
@@ -172,7 +162,7 @@ public class InventoryControler : MonoBehaviour
 
     void Start()
     {
-        AddWeapon(weaponStartVisualPrefab, weaponStartPrefab, weaponStartIconPrefab);
+        AddWeapon(weaponStartData);
     }
 
     void Update()

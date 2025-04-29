@@ -5207,6 +5207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4564628222804701009}
   - component: {fileID: 970309632699140128}
+  - component: {fileID: -6476935980498352071}
   m_Layer: 9
   m_Name: drill
   m_TagString: Weapon
@@ -5270,10 +5271,26 @@ MonoBehaviour:
   attackPoint: {fileID: 5397792312698250231}
   text: {fileID: 0}
   shootSound: {fileID: 1780423765502389215}
+  reloadKey: 114
   reloadSound: {fileID: 5849806957361081436}
   OtherReloadSound1: {fileID: 0}
   OtherReloadSound2: {fileID: 0}
   OtherReloadSound3: {fileID: 0}
+--- !u!114 &-6476935980498352071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8575844692142758303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088bc906336b3f2438a1d8ba8e7e737c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 8575844692142758303}
+  visualPrefab: {fileID: 4357118449180629203, guid: 6e1c49bbf969d2f4d9ad469e98fdb84a, type: 3}
+  iconPrefab: {fileID: 2715647921180252526, guid: 9264249d9e19d6f4490e129bb96643b6, type: 3}
 --- !u!1001 &5905589336701477069
 PrefabInstance:
   m_ObjectHideFlags: 0

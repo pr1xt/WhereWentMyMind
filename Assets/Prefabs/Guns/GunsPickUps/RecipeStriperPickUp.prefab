@@ -45,9 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41dc08c9009fd17458bdcab2829aefc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunVisualPrefab: {fileID: 4357118449180629203, guid: 39245ae34f9b98a46be3e20487713ad1, type: 3}
-  gunPrefab: {fileID: 8575844692142758303, guid: 431bda250ef25c445bf3d2ceb6e21df3, type: 3}
-  iconPrefab: {fileID: 2715647921180252526, guid: 23126a3297d18004ab038a08d1f74a16, type: 3}
+  weaponData: {fileID: 3691229338865770495, guid: 431bda250ef25c445bf3d2ceb6e21df3, type: 3}
   interactKey: 101
   pickupText: {fileID: 8854692777692781122}
   pickUpSoundPrefab: {fileID: 2371350955075987668, guid: c8cb72c9f75c20348ae5cff02f197408, type: 3}
