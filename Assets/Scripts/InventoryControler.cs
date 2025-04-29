@@ -64,7 +64,7 @@ public class InventoryControler : MonoBehaviour
             if (i == currentWeaponIndex)
             {
                 weaponIcon.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
-                weaponIcon.GetComponent<RawImage>().color = new Color(255, 255, 0, 255);
+                weaponIcon.GetComponent<RawImage>().color = new Color(120,120,120,0.8f);
             }
         }
     }
