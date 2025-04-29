@@ -165,9 +165,11 @@ MonoBehaviour:
   health: 100
   Coin: {fileID: 5884378261873455205, guid: 01591337f6ff92147977c0622a15b752, type: 3}
   HealthUp: {fileID: 7897012022180927259, guid: 4704bbf15c43e2647be5b587f1b1fdc2, type: 3}
+  MapController: {fileID: 0}
   hitSound: {fileID: 559027527799561985}
   deathSound: {fileID: 7028901162974081842}
   RudyMovement: {fileID: 2710170878423692058}
+  NormalMovement: {fileID: 0}
 --- !u!114 &-1643469619666040408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +185,9 @@ MonoBehaviour:
   normalDamage: 10
   crushDamage: 25
   attackCooldown: 2
+  canShoot: 0
+  shootDelay: 0.25
+  shootEffect: {fileID: 0}
 --- !u!195 &1170718877859455022
 NavMeshAgent:
   m_ObjectHideFlags: 0
