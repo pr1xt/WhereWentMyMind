@@ -2180,6 +2180,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1678147438}
     - target: {fileID: 4573391810870780783, guid: de9c5ec1c25c6b14493cf6564701c42a, type: 3}
+      propertyPath: weaponStartData
+      value: 
+      objectReference: {fileID: -5679815149175803342, guid: e993ec54b8065404180cfc7cae8dda11, type: 3}
+    - target: {fileID: 4573391810870780783, guid: de9c5ec1c25c6b14493cf6564701c42a, type: 3}
       propertyPath: weaponStartIconPrefab
       value: 
       objectReference: {fileID: 2715647921180252526, guid: cde936a6e3fac974bb73e77997260695, type: 3}

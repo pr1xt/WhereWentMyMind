@@ -4,9 +4,7 @@ using UnityEngine.InputSystem;
 
 public class GunPickUp : MonoBehaviour
 {
-    public GameObject gunVisualPrefab; 
-    public GameObject gunPrefab;
-    public GameObject iconPrefab;
+    public WeaponData weaponData;
     private GameObject gunVisual; 
     private InventoryControler inventoryControler; 
     public KeyCode interactKey = KeyCode.E;
@@ -15,7 +13,7 @@ public class GunPickUp : MonoBehaviour
 
     void Start()
     {
-        gunVisual = Instantiate(gunVisualPrefab, transform);
+        gunVisual = Instantiate(weaponData.visualPrefab, transform);
         gunVisual.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f); 
         inventoryControler = GameObject.FindWithTag("Player").GetComponent<InventoryControler>();
     }
@@ -61,11 +59,11 @@ public class GunPickUp : MonoBehaviour
             {
                 if(inventoryControler.GetWeaponsCount() >= inventoryControler.maxWeapons)
                 {
-                    inventoryControler.ReplaceWeapon(gunVisualPrefab, gunPrefab, iconPrefab, transform.position);
+                    inventoryControler.ReplaceWeapon(weaponData, transform.position);
                 }
                 else
                 {
-                    inventoryControler.AddWeapon(gunVisualPrefab, gunPrefab, iconPrefab);
+                    inventoryControler.AddWeapon(weaponData);
                 }
                 SpawnPickUpSound();
                 Destroy(gameObject); 
