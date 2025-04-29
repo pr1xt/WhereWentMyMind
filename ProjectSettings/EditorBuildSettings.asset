@@ -17,25 +17,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: ee1520fb674a84a41aba6aaf674b1bc3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameDrill.unity
     guid: 573113be77e465f48877b92f3c74045f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameGamblingGun.unity
     guid: 17ebd97cdd977564c974ba2c450748da
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GamePaintRoller.unity
     guid: 6cdfc914a9ec8824d87bbae186776f7b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GamePhone.unity
     guid: d283351e7c3bb184088503fe71736f1c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameRecipePrinter.unity
     guid: 7d25fdbec7816a948b2f7b4189b7d60e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameSkull.unity
     guid: ec2452cf01f124c4dafee947d41db922
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameToster.unity
     guid: d523268b6dcb4ef47bd96a1e7ace89fc
   m_configObjects:
