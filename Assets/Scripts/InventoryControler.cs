@@ -60,7 +60,6 @@ public class InventoryControler : MonoBehaviour
         for (int i = 0; i < weapons.Count; i++)
         {
             GameObject weaponIcon = Instantiate(inventoryUIItemBorderPrefab, inventoryUI);
-            Debug.Log(weapons[i].iconPrefab);
             Instantiate(weapons[i].iconPrefab, weaponIcon.transform);
             if (i == currentWeaponIndex)
             {
