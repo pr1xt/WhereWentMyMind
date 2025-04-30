@@ -17,6 +17,17 @@ public class ControlsSetting : MonoBehaviour
     void Start()
     {
         button.onClick.AddListener(OnClick);
+        // Loading the key from PlayerPrefs
+        string keyString = PlayerPrefs.GetString(controlType + "Key", buttonText.text);
+        KeyCode keyCode;
+        if (System.Enum.TryParse(keyString, out keyCode))
+        {
+            key = keyCode;
+        } else
+        {
+            // If the key is not found, set it to the default value (buttonText.text)
+            key = (KeyCode) System.Enum.Parse(typeof(KeyCode), buttonText.text);
+        }
     }
 
     void OnClick()
@@ -57,7 +68,6 @@ public class ControlsSetting : MonoBehaviour
         // Update the button text
         buttonText.text = key.ToString();
         PlayerPrefs.SetString(controlType + "Key", key.ToString());
-        Debug.Log(controlType + "Keystring: " + key.ToString() + "keycode: " + key);
         PlayerPrefs.Save();
     }
 }
