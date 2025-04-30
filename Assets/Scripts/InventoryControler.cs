@@ -17,6 +17,7 @@ public class InventoryControler : MonoBehaviour
     [SerializeField] private GameObject weaponPickupPrefab;
     [SerializeField] private RectTransform inventoryUI;
     [SerializeField] private GameObject inventoryUIItemBorderPrefab;
+    [SerializeField] private GameObject ammoUI;
     public int maxWeapons = 2;
     private List<Weapon> weapons = new();
     public MapControler mapController;
@@ -48,6 +49,7 @@ public class InventoryControler : MonoBehaviour
 
     private void UpdateWeaponUI()
     {
+        ammoUI.GetComponent<RawImage>().texture = weapons[currentWeaponIndex].weaponData.ammoUiImage;
         foreach (RectTransform child in inventoryUI)
         {
             Destroy(child.gameObject);
