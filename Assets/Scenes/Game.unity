@@ -1153,19 +1153,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map
       objectReference: {fileID: 0}
-    - target: {fileID: 3800625150806201427, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
-      propertyPath: CoinPickUpMapElement
-      value: 
-      objectReference: {fileID: 2026336160343407703, guid: 4295c711a3e76554ba6657ea635f5937, type: 3}
-    - target: {fileID: 3800625150806201427, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
-      propertyPath: HeartPickUpMapElement
-      value: 
-      objectReference: {fileID: 2026336160343407703, guid: b9e7c7edc783fa944a8579fa5dc7bfea, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8926078144761395331, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 438499747}
   m_SourcePrefab: {fileID: 100100000, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
+--- !u!1 &438499742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8926078144761395331, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
+  m_PrefabInstance: {fileID: 438499740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &438499747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438499742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &440560537
 GameObject:
   m_ObjectHideFlags: 0
