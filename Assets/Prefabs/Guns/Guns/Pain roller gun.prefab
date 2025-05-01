@@ -254,6 +254,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 8575844692142758303}
   visualPrefab: {fileID: 4357118449180629203, guid: a812d1ee97de1ed42b349a704b82062e, type: 3}
   iconPrefab: {fileID: 2715647921180252526, guid: cde936a6e3fac974bb73e77997260695, type: 3}
+  ammoUiImage: {fileID: 2800000, guid: 11fc8b34451156944992548fae847b4d, type: 3}
 --- !u!1 &9135291126285800272
 GameObject:
   m_ObjectHideFlags: 0

@@ -5209,7 +5209,7 @@ GameObject:
   - component: {fileID: 970309632699140128}
   - component: {fileID: -6476935980498352071}
   m_Layer: 9
-  m_Name: drill
+  m_Name: Drill
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5291,6 +5291,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 8575844692142758303}
   visualPrefab: {fileID: 4357118449180629203, guid: 6e1c49bbf969d2f4d9ad469e98fdb84a, type: 3}
   iconPrefab: {fileID: 2715647921180252526, guid: 9264249d9e19d6f4490e129bb96643b6, type: 3}
+  ammoUiImage: {fileID: 2800000, guid: 1fe7ef5e8fcfdc14e9534abecbbf8dff, type: 3}
 --- !u!1001 &5905589336701477069
 PrefabInstance:
   m_ObjectHideFlags: 0
