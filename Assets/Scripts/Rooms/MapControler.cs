@@ -24,7 +24,7 @@ public class MapControler : MonoBehaviour
     GameObject prefabToSpawn = null;
     public float MapSpawnHeight = 20f;
 
-    private void GenerateMap(Vector2Int roomPosition, HashSet<Vector2Int> rooms)
+    private GameObject GenerateMap(Vector2Int roomPosition, HashSet<Vector2Int> rooms)
     {
         GameObject roomMap = Instantiate(roomIconPrefab, floorObject.transform);
         roomMap.transform.localPosition = new Vector3(60 * roomPosition.x, 60 * roomPosition.y, 0);
@@ -41,6 +41,10 @@ public class MapControler : MonoBehaviour
                 corridor.transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotations[i]));
             } 
         }
+        if(roomPosition != Vector2.zero){
+            roomMap.SetActive(false);
+        }
+        return roomMap;
     }
 
     private List<Vector2Int> GetSurroundingPositions(Vector2Int roomPosition)
@@ -171,10 +175,12 @@ public class MapControler : MonoBehaviour
         {
             GameObject room = Instantiate(roomPrefab, transform);
             room.transform.position = new Vector3(60 * roomPosition.x, 0, 60 * roomPosition.y);
+
+            GameObject mapObject = GenerateMap(roomPosition, rooms);
+            room.GetComponent<RoomControler>().mapIconObject = mapObject;
+
             GenerateWalls(room, roomPosition, new HashSet<Vector2Int>(rooms) { endingRoomPosition });
             GenerateCorridors(room, roomPosition, new HashSet<Vector2Int>(rooms) { endingRoomPosition });
-            GenerateMap(roomPosition, rooms);
-
             if(roomPosition == new Vector2Int(0, 0))
             {
                 Instantiate(staringRoom, room.transform);
@@ -192,12 +198,6 @@ public class MapControler : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        GenerateFloor(6);
-        UpdateIconsOnMap();
-
-    }
     public void UpdateIconsOnMap()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -261,6 +261,22 @@ public class MapControler : MonoBehaviour
                 attached.transform.SetParent(coin.transform, worldPositionStays: true);
             }
         }
+    }
 
+    void Start()
+    {
+        GenerateFloor(6);
+        UpdateIconsOnMap();
+    }
+
+    void Update() {
+        if(Input.GetKey(KeyCode.Tab))
+        {
+            mapObject.SetActive(true);
+        }
+        else
+        {
+            mapObject.SetActive(false);
+        }
     }
 }

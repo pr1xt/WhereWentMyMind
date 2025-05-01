@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomControler : MonoBehaviour
 {
     private bool roomCompleted = false;
+    public GameObject mapIconObject;
     public List<EnemyControler> enemys = new();
     public List<DoorControler> doors = new();
 
@@ -33,6 +34,7 @@ public class RoomControler : MonoBehaviour
         if(other.CompareTag("Player") && !roomCompleted)
         {
             CloseDoors();
+            mapIconObject.SetActive(true);
         }
     }
 
