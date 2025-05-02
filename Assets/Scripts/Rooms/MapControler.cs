@@ -11,12 +11,41 @@ public class MapControler : MonoBehaviour
     [SerializeField] private List<GameObject> hospitalCorridors;
     [SerializeField] private GameObject normalWall;
     [SerializeField] private GameObject wallWithDoor;
+
+    [SerializeField] private GameObject mapObject;
+    [SerializeField] private GameObject floorObject;
+    [SerializeField] private GameObject roomIconPrefab;
+    [SerializeField] private GameObject floorIconPrefab;
+    [SerializeField] private GameObject corridorIconPrefab;
     public GameObject EnemyMapElement;
     public GameObject GunPickUpMapElement;
     public GameObject CoinPickUpMapElement;
     public GameObject HeartPickUpMapElement;
     GameObject prefabToSpawn = null;
     public float MapSpawnHeight = 20f;
+
+    private GameObject GenerateMap(Vector2Int roomPosition, HashSet<Vector2Int> rooms)
+    {
+        GameObject roomMap = Instantiate(roomIconPrefab, floorObject.transform);
+        roomMap.transform.localPosition = new Vector3(60 * roomPosition.x, 60 * roomPosition.y, 0);
+        Instantiate(floorIconPrefab, roomMap.transform);
+
+        List<int> rotations = new() { 270, 90, 0, 180 };
+        List<Vector2Int> surroundingPositions = GetSurroundingPositions(roomPosition);
+        for(int i = 0; i < surroundingPositions.Count; i++)
+        {
+            Vector2Int surroundingPosition = surroundingPositions[i];
+            if(rooms.Contains(surroundingPosition))
+            {
+                GameObject corridor = Instantiate(corridorIconPrefab, roomMap.transform);
+                corridor.transform.rotation = Quaternion.Euler(new Vector3(0, 0, rotations[i]));
+            } 
+        }
+        if(roomPosition != Vector2.zero){
+            roomMap.SetActive(false);
+        }
+        return roomMap;
+    }
 
     private List<Vector2Int> GetSurroundingPositions(Vector2Int roomPosition)
     {
@@ -146,9 +175,12 @@ public class MapControler : MonoBehaviour
         {
             GameObject room = Instantiate(roomPrefab, transform);
             room.transform.position = new Vector3(60 * roomPosition.x, 0, 60 * roomPosition.y);
+
+            GameObject mapObject = GenerateMap(roomPosition, rooms);
+            room.GetComponent<RoomControler>().mapIconObject = mapObject;
+
             GenerateWalls(room, roomPosition, new HashSet<Vector2Int>(rooms) { endingRoomPosition });
             GenerateCorridors(room, roomPosition, new HashSet<Vector2Int>(rooms) { endingRoomPosition });
-
             if(roomPosition == new Vector2Int(0, 0))
             {
                 Instantiate(staringRoom, room.transform);
@@ -166,12 +198,6 @@ public class MapControler : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        GenerateFloor(6);
-        UpdateIconsOnMap();
-
-    }
     public void UpdateIconsOnMap()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -235,6 +261,22 @@ public class MapControler : MonoBehaviour
                 attached.transform.SetParent(coin.transform, worldPositionStays: true);
             }
         }
+    }
 
+    void Start()
+    {
+        GenerateFloor(6);
+        UpdateIconsOnMap();
+    }
+
+    void Update() {
+        if(Input.GetKey(KeyCode.Tab))
+        {
+            mapObject.SetActive(true);
+        }
+        else
+        {
+            mapObject.SetActive(false);
+        }
     }
 }
