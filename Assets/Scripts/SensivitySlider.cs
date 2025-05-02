@@ -7,8 +7,8 @@ public class SensivitySlider : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        PlayerPrefs.SetFloat("sensX", Slider.value);
-        PlayerPrefs.SetFloat("sensY", Slider.value);
+        Slider.value = PlayerPrefs.GetFloat("sensX", 25);
+        Slider.value = PlayerPrefs.GetFloat("sensY", 25);
     }
 
     // Update is called once per frame
