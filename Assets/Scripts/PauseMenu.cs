@@ -40,7 +40,6 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Debug.Log("Game Resumed");
     }
 
     void Pause()

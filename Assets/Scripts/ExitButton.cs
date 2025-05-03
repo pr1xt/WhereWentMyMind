@@ -20,7 +20,7 @@ public class ExitButton : MonoBehaviour
         yourButton.onClick.RemoveListener(TaskOnClick);
     }
 
-	void TaskOnClick(){
+	public void TaskOnClick(){
         // check if it is the button in main menu or settings
 		if (menu) {
             menu.SetActive(true);
