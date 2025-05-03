@@ -29,10 +29,12 @@ public class SliderInput : MonoBehaviour
             if (float.TryParse(text, out float value) && value <= maxValue)
             {
                 sliderInput.text = value.ToString("0.##");
+                slider.value = value;
             }
-            else if (float.TryParse(text, out value))
+            else
             {
                 sliderInput.text = maxValue.ToString("0.##");
+                slider.value = maxValue;
             }
         }
         else
