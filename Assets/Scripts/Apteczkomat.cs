@@ -3,16 +3,15 @@ using TMPro;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
-public class GamblingMachine : MonoBehaviour
+public class Apteczkomat : MonoBehaviour
 {
-    public GameObject[] pickUps;
+    public GameObject apteczkaPrefab;
     public Animator gamblerAnimator;
     public int SpawnX;
     public int SpawnZ;
     private bool isGambling = false;
-    [SerializeField] private AudioSource gamblingSound;
     public KeyCode interactKey = KeyCode.E; // Default key for interaction
-    private float animationLength = 7.0f;
+    private float animationLength = 9.5f;
 
     private KeyCode LoadKey() {
         string keyString = PlayerPrefs.GetString("InteractKey", "E");
@@ -44,22 +43,13 @@ public class GamblingMachine : MonoBehaviour
             if (Input.GetKeyDown(interactKey))
             {
                 if (player.TryGetComponent<PlayerControler>(out var playerCoins)) {
-                    if (playerCoins.coins >= 1 && !isGambling)
+                    if (playerCoins.coins >= 5 && !isGambling)
                     {
-                        playerCoins.coins -= 1;
+                        playerCoins.coins -= 5;
                         isGambling = true;
                         gamblerAnimator.SetBool("isPlaying", true);
-                        gamblingSound.volume = PlayerPrefs.GetFloat("Volume", 1f);
-                        gamblingSound.Play();
-                        if (UnityEngine.Random.Range(0, 100) < 50) 
-                        {
-                            // wait until the animation is done before dropping loot
-                            gamblerAnimator.Play("win");
-                            Invoke(nameof(Win), animationLength);
-                        } else {
-                            gamblerAnimator.Play("loss");
-                            Invoke(nameof(EndAnim), animationLength);
-                        }
+                        gamblerAnimator.Play("GiveMeThatApteczka");
+                        Invoke(nameof(EndAnim), animationLength);
                     }
                 }
             }
@@ -76,11 +66,6 @@ public class GamblingMachine : MonoBehaviour
     void EndAnim()
     {
         isGambling = false;
-    }
-
-    void Win()
-    {
-        isGambling = false;
-        Instantiate(pickUps[Random.Range(0, pickUps.Length)], new Vector3(transform.position.x + SpawnX, transform.position.y, transform.position.z-SpawnX), transform.rotation);
+        Instantiate(apteczkaPrefab, new Vector3(transform.position.x + SpawnX, transform.position.y, transform.position.z-SpawnX), transform.rotation);
     }
 }
