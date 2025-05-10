@@ -11,6 +11,7 @@ public class PlayerControler : MonoBehaviour
     public int coins = 0;
     // [SerializeField] private TMP_Text healthText;
     [SerializeField] private GameObject deathScreen;
+    [SerializeField] private GameObject canvas;
     [SerializeField] private TMP_Text coinsText;
     [SerializeField] private RectTransform healthBar;
     [SerializeField] private AudioSource hitSound;
@@ -39,6 +40,13 @@ public class PlayerControler : MonoBehaviour
     private void Die()
     {
         Time.timeScale = 0;
+        foreach (Transform child in canvas.transform)
+        {
+            if (child.gameObject != deathScreen)
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
         deathScreen.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
