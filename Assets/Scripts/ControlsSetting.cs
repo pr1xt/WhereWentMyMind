@@ -26,6 +26,7 @@ public class ControlsSetting : MonoBehaviour
         } else
         {
             // If the key is not found, set it to the default value (buttonText.text)
+            
             key = (KeyCode) System.Enum.Parse(typeof(KeyCode), buttonText.text);
         }
     }
