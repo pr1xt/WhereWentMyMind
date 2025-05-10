@@ -12,6 +12,7 @@ public class GamblingMachine : MonoBehaviour
     private bool isGambling = false;
     [SerializeField] private AudioSource gamblingSound;
     public KeyCode interactKey = KeyCode.E; // Default key for interaction
+    private float animationLength = 7.0f;
 
     private KeyCode LoadKey() {
         string keyString = PlayerPrefs.GetString("InteractKey", "E");
@@ -53,9 +54,11 @@ public class GamblingMachine : MonoBehaviour
                         if (UnityEngine.Random.Range(0, 100) < 50) 
                         {
                             // wait until the animation is done before dropping loot
-                            StartCoroutine(PlayAndWait("win"));
+                            gamblerAnimator.Play("win");
+                            Invoke(nameof(Win), animationLength);
                         } else {
-                            StartCoroutine(PlayAndWait("loss"));
+                            gamblerAnimator.Play("loss");
+                            Invoke(nameof(EndAnim), animationLength);
                         }
                     }
                 }
@@ -70,16 +73,14 @@ public class GamblingMachine : MonoBehaviour
         }
     }
 
-    IEnumerator PlayAndWait(string animationName)
+    void EndAnim()
     {
-        gamblerAnimator.Play(animationName);
-        yield return new WaitForSeconds(gamblerAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length);
-
-        // Drop loot here
         isGambling = false;
-        if (animationName == "win")
-        {
-            Instantiate(pickUps[Random.Range(0, pickUps.Length)], new Vector3(transform.position.x + SpawnX, transform.position.y, transform.position.z-SpawnX), transform.rotation);
-        }
+    }
+
+    void Win()
+    {
+        isGambling = false;
+        Instantiate(pickUps[Random.Range(0, pickUps.Length)], new Vector3(transform.position.x + SpawnX, transform.position.y, transform.position.z-SpawnX), transform.rotation);
     }
 }
