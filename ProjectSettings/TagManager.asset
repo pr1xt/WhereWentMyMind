@@ -13,6 +13,7 @@ TagManager:
   - InteractText
   - Rudy
   - GunPickup
+  - WeaponSelector
   layers:
   - Default
   - TransparentFX

@@ -164,6 +164,7 @@ public class InventoryControler : MonoBehaviour
 
     void Start()
     {
+        if(WeaponSelector.Instance != null) weaponStartData = WeaponSelector.Instance.weaponStartData;
         AddWeapon(weaponStartData);
     }
 
