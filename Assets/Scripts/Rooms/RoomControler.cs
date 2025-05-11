@@ -30,11 +30,10 @@ public class RoomControler : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider other) {
-        // Debug.Log(other.tag);
-        if(other.CompareTag("Player") && !roomCompleted)
+        if(other.CompareTag("Player"))
         {
-            CloseDoors();
             mapIconObject.SetActive(true);
+            if(!roomCompleted) CloseDoors();
         }
     }
 
