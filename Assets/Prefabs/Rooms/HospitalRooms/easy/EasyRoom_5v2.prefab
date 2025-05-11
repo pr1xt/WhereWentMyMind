@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.096666664
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 19878d469e49e474a8870690e9b29af0, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 38efa18f0f4f2df4e980ccd0614e92de, type: 2}
   m_BuildHeightMesh: 0
 --- !u!114 &-7169433333611178748
 MonoBehaviour:
@@ -115,9 +115,9 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.07666667
+  m_VoxelSize: 0.036666665
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: dc3ce16a654f7d64698808c7a3a8b590, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 19878d469e49e474a8870690e9b29af0, type: 2}
   m_BuildHeightMesh: 0
 --- !u!114 &1949669373621908124
 MonoBehaviour:
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.036666665
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 38efa18f0f4f2df4e980ccd0614e92de, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c3b71c650725fc54391bd87a0b481acd, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &927153614047605586
 GameObject:
@@ -14260,6 +14260,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 4482112719888816010, guid: 792f9de5aacbc524eae13b3b216e6123, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5867736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482112719888816010, guid: 792f9de5aacbc524eae13b3b216e6123, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.4242
+      objectReference: {fileID: 0}
     - target: {fileID: 4683738960065655173, guid: 792f9de5aacbc524eae13b3b216e6123, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -17223,6 +17231,18 @@ PrefabInstance:
     - target: {fileID: 2832609489302901608, guid: 792f9de5aacbc524eae13b3b216e6123, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482112719888816010, guid: 792f9de5aacbc524eae13b3b216e6123, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.983694
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482112719888816010, guid: 792f9de5aacbc524eae13b3b216e6123, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482112719888816010, guid: 792f9de5aacbc524eae13b3b216e6123, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.6255
       objectReference: {fileID: 0}
     - target: {fileID: 4683738960065655173, guid: 792f9de5aacbc524eae13b3b216e6123, type: 3}
       propertyPath: m_Layer
