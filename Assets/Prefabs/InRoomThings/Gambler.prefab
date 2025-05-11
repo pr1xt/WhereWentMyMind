@@ -288,6 +288,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUps:
   - {fileID: 553988104983835085, guid: f4595b3d31574594cbeceef73b7b4ae0, type: 3}
+  - {fileID: 553988104983835085, guid: 7373548a3a862c946aac735e20e74c95, type: 3}
+  - {fileID: 553988104983835085, guid: 48f3ab41c32b3514c87123e56ec73e32, type: 3}
+  - {fileID: 553988104983835085, guid: 7cb31a4563613bc4993bf392d51868aa, type: 3}
+  - {fileID: 553988104983835085, guid: 80f50ccde45cb1b409f109804902794d, type: 3}
+  - {fileID: 553988104983835085, guid: f33dabcdea37ee0479d622f01efc1a61, type: 3}
+  - {fileID: 553988104983835085, guid: b055cdf6327c81a4fab567d79ef724e8, type: 3}
   gamblerAnimator: {fileID: 8838209690293900295}
   SpawnX: 0
   SpawnZ: 0
