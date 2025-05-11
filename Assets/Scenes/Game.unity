@@ -1155,7 +1155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3800625150806201427, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
       propertyPath: hospitalRooms.Array.size
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3800625150806201427, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
       propertyPath: 'hospitalRooms.Array.data[1]'
@@ -1207,6 +1207,10 @@ PrefabInstance:
       objectReference: {fileID: 369805868904107802, guid: af80db8c441ac624cb8604fe22466363, type: 3}
     - target: {fileID: 3800625150806201427, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
       propertyPath: 'hospitalRooms.Array.data[13]'
+      value: 
+      objectReference: {fileID: 369805868904107802, guid: b59f6f357c22b3a40a22a47db0f8b6eb, type: 3}
+    - target: {fileID: 3800625150806201427, guid: f6593e454dfbd2148950db6b957a6804, type: 3}
+      propertyPath: 'hospitalRooms.Array.data[14]'
       value: 
       objectReference: {fileID: 369805868904107802, guid: b59f6f357c22b3a40a22a47db0f8b6eb, type: 3}
     m_RemovedComponents: []
