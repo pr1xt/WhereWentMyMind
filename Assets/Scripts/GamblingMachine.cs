@@ -7,8 +7,9 @@ public class GamblingMachine : MonoBehaviour
 {
     public GameObject[] pickUps;
     public Animator gamblerAnimator;
-    public int SpawnX;
-    public int SpawnZ;
+    public float SpawnX;
+    public float SpawnY;
+    public float SpawnZ;
     private bool isGambling = false;
     [SerializeField] private AudioSource gamblingSound;
     public KeyCode interactKey = KeyCode.E; // Default key for interaction
@@ -35,7 +36,7 @@ public class GamblingMachine : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (Vector3.Distance(transform.position, Camera.main.transform.position) < 3f)
         {
-            payApteczkaText.GetComponent<TextMeshProUGUI>().text = $"Press {interactKey} to buy health pack";
+            payApteczkaText.GetComponent<TextMeshProUGUI>().text = $"Press {interactKey} to gamble";
             payApteczkaText.SetActive(true);
 
             if (Input.GetKeyDown(interactKey))
@@ -73,6 +74,6 @@ public class GamblingMachine : MonoBehaviour
     void Win()
     {
         isGambling = false;
-        Instantiate(pickUps[Random.Range(0, pickUps.Length)], new Vector3(transform.position.x + SpawnX, transform.position.y, transform.position.z-SpawnX), transform.rotation);
+        Instantiate(pickUps[Random.Range(0, pickUps.Length)], new Vector3(transform.position.x + SpawnX, transform.position.y + SpawnY, transform.position.z + SpawnZ), transform.rotation);
     }
 }

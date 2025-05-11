@@ -7,8 +7,9 @@ public class Apteczkomat : MonoBehaviour
 {
     public GameObject apteczkaPrefab;
     public Animator gamblerAnimator;
-    public int SpawnX;
-    public int SpawnZ;
+    public float SpawnX;
+    public float SpawnY;
+    public float SpawnZ;
     private bool isGambling = false;
     public KeyCode interactKey = KeyCode.E; // Default key for interaction
     private float animationLength = 9.5f;
@@ -57,6 +58,6 @@ public class Apteczkomat : MonoBehaviour
     void EndAnim()
     {
         isGambling = false;
-        Instantiate(apteczkaPrefab, new Vector3(transform.position.x + SpawnX, transform.position.y, transform.position.z-SpawnX), transform.rotation);
+        Instantiate(apteczkaPrefab, new Vector3(transform.position.x + SpawnX, transform.position.y + SpawnY, transform.position.z + SpawnZ), transform.rotation);
     }
 }
