@@ -1844,6 +1844,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &704509937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6957789191445622163, guid: e70f25844b2c5dc48978ad2ddc0b805c, type: 3}
+  m_PrefabInstance: {fileID: 1461221538100242114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &710841867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2072,6 +2077,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828439894}
   m_CullTransparentMesh: 1
+--- !u!1 &831474756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1508249463837780345, guid: de9c5ec1c25c6b14493cf6564701c42a, type: 3}
+  m_PrefabInstance: {fileID: 902034568}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &831474764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831474756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d3843df9f099d4fb80cd0bd80d7004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiRoot: {fileID: 1778754286}
+  GunCamera: {fileID: 704509937}
 --- !u!1001 &902034568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2371,7 +2395,10 @@ PrefabInstance:
     - {fileID: 2796151672689517718, guid: de9c5ec1c25c6b14493cf6564701c42a, type: 3}
     - {fileID: 8254610789214807825, guid: de9c5ec1c25c6b14493cf6564701c42a, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1508249463837780345, guid: de9c5ec1c25c6b14493cf6564701c42a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 831474764}
   m_SourcePrefab: {fileID: 100100000, guid: de9c5ec1c25c6b14493cf6564701c42a, type: 3}
 --- !u!4 &902034569 stripped
 Transform:
