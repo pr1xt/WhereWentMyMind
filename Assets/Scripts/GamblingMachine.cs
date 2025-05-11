@@ -13,6 +13,7 @@ public class GamblingMachine : MonoBehaviour
     [SerializeField] private AudioSource gamblingSound;
     public KeyCode interactKey = KeyCode.E; // Default key for interaction
     private float animationLength = 7.0f;
+    [SerializeField] private GameObject payApteczkaText; 
 
     private KeyCode LoadKey() {
         string keyString = PlayerPrefs.GetString("InteractKey", "E");
@@ -34,12 +35,8 @@ public class GamblingMachine : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (Vector3.Distance(transform.position, Camera.main.transform.position) < 3f)
         {
-            if (InteractText != null)
-            {
-                InteractText.GetComponent<TextMeshProUGUI>().text = $"Press {interactKey} to gamble";
-            } else {
-                Debug.Log("InteractText not found");
-            }
+            payApteczkaText.GetComponent<TextMeshProUGUI>().text = $"Press {interactKey} to buy health pack";
+            payApteczkaText.SetActive(true);
 
             if (Input.GetKeyDown(interactKey))
             {
@@ -64,12 +61,7 @@ public class GamblingMachine : MonoBehaviour
                 }
             }
         } else {
-            if (InteractText != null)
-            {
-                InteractText.GetComponent<TextMeshProUGUI>().text = "";
-            } else {
-                Debug.Log("InteractText not found");
-            }
+            payApteczkaText.SetActive(false);
         }
     }
 
