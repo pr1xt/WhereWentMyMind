@@ -7,6 +7,7 @@ public class PlayerControler : MonoBehaviour
     private readonly int healthBarMaxOfset = 381;
     private int health = 100;
     private int maxHealth = 100;
+    private bool ShowUI = true;
 
     public int coins = 0;
     // [SerializeField] private TMP_Text healthText;
