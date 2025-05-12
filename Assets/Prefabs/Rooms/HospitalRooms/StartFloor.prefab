@@ -11152,6 +11152,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 852889166248530996}
     m_Modifications:
+    - target: {fileID: 4289383714826095494, guid: 92ef2a43c74e7564fad5a59395dcc0e2, type: 3}
+      propertyPath: SpawnX
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289383714826095494, guid: 92ef2a43c74e7564fad5a59395dcc0e2, type: 3}
+      propertyPath: SpawnY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289383714826095494, guid: 92ef2a43c74e7564fad5a59395dcc0e2, type: 3}
+      propertyPath: SpawnZ
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5230960706718076732, guid: 92ef2a43c74e7564fad5a59395dcc0e2, type: 3}
       propertyPath: m_Name
       value: Apteczkomat
@@ -11693,6 +11705,10 @@ PrefabInstance:
     - target: {fileID: 1465449377936678775, guid: 60281d3e8998aa943b2b38b03efc1d6d, type: 3}
       propertyPath: SpawnX
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465449377936678775, guid: 60281d3e8998aa943b2b38b03efc1d6d, type: 3}
+      propertyPath: SpawnY
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1465449377936678775, guid: 60281d3e8998aa943b2b38b03efc1d6d, type: 3}
       propertyPath: SpawnZ
