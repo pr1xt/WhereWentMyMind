@@ -265,7 +265,7 @@ public class MapControler : MonoBehaviour
 
     void Start()
     {
-        GenerateFloor(6);
+        GenerateFloor(10);
         UpdateIconsOnMap();
     }
 
